@@ -21,6 +21,8 @@ Req Body Params: username, password, ssn, bankAcct
 
 ## Malicious tasks using sql injection
 
-Figure out how to read all info for all users
-Figure out how to update one user without their password
-Figure out how to update all users with one request
+##### Figure out how to read all info for all users
+
+##### Figure out how to update one user without their password
+
+##### Figure out how to update all users with one request
