@@ -1,0 +1,4 @@
+node_modules
+.env
+dbseed.js
+comments.txt
