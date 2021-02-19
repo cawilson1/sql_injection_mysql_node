@@ -44,10 +44,10 @@ app.get(`/${API_PREFIX}/user`, async (request, response) => {
     if (!request.query.username || !request.query.password) {
       response.status(400).send({ message: "no username or password entered" });
     }
-    const query = `SELECT * FROM vulnsql.user WHERE username = '${request.query.username}' AND password = '${request.query.password}'`;
+    const query = `SELECT * FROM vulnsql.user WHERE username = ? AND password = ?`;
     console.log(query);
     const conn = await pool.getConnection();
-    const recordset = await pool.execute(query);
+    const recordset = await pool.execute(query, [request.query.username, request.query.password]);
     console.log(recordset[0]);
     conn.release();
     response.status(200).send({ message: recordset[0] });
